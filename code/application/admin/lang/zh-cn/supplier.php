@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'Id'           => 'ID',
+    'Name'         => '供应商名称',
+    'Level'        => '级别',
+    'Level c1'     => '钻石',
+    'Level c2'     => '金牌',
+    'Level c3'     => '银牌',
+    'Level c4'     => '铜牌',
+    'Enterdate'    => '录入日期',
+    'Startdate'    => '合作起始日期',
+    'Enddate'      => '合作终止日期',
+    'Content'      => '提供服务内容',
+    'Othercontent' => '其他分包方及分包内容',
+    'Linkman'      => '供应商联络人',
+    'Contact'      => '联系方式',
+    'Secretswitch' => '是否涉密',
+    'Keepswitch'   => '保密协议/条款',
+    'Notecontent'  => '备注',
+    'Image'        => '供应商资质文件导入（扫描件）',
+    'Refreshtime'  => '刷新时间(int)',
+    'Createtime'   => '创建时间',
+    'Updatetime'   => '更新时间',
+    'Deletetime'   => '删除时间',
+    'Status'       => '状态',
+    'State'        => '状态值',
+    'State 0'      => '禁用',
+    'State 1'      => '正常',
+    'State 2'      => '推荐'
+];

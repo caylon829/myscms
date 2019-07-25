@@ -1,0 +1,58 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Month')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-month" data-rule="required" class="form-control" name="row[month]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Purpose_0')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-purpose_0" data-rule="required" class="form-control" step="0.01" name="row[purpose_0]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Purpose_1')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-purpose_1" data-rule="required" class="form-control" step="0.01" name="row[purpose_1]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Purpose_2')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-purpose_2" data-rule="required" class="form-control" step="0.01" name="row[purpose_2]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Purpose_3')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-purpose_3" data-rule="required" class="form-control" step="0.01" name="row[purpose_3]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Purpose_4')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-purpose_4" data-rule="required" class="form-control" step="0.01" name="row[purpose_4]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Purpose_5')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-purpose_5" class="form-control" step="0.01" name="row[purpose_5]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Purpose_6')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-purpose_6" class="form-control" step="0.01" name="row[purpose_6]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

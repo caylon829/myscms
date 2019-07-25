@@ -1,0 +1,175 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bill_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bill_code" data-rule="required" class="form-control" name="row[bill_code]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Supplier_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-supplier_id" data-rule="required" data-source="supplier/index" class="form-control selectpage" name="row[supplier_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Contract_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-contract_id" data-rule="required" data-source="contract/index" data-field="contract_aname" class="form-control selectpage" name="row[contract_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Paytitle')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-paytitle" data-rule="required" class="form-control selectpicker" name="row[paytitle]">
+                {foreach name="paytitleList" item="vo"}
+                    <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-price" data-rule="required" class="form-control" step="0.01" name="row[price]" type="number" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bill_paid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bill_paid" class="form-control" step="0.01" name="row[bill_paid]" type="number" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bill_unpaid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bill_unpaid" class="form-control" step="0.01" name="row[bill_unpaid]" type="number" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bill_content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-bill_content" class="form-control editor" rows="5" name="row[bill_content]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Source_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-source_type" data-rule="required" class="form-control selectpicker" name="row[source_type]">
+                {foreach name="sourcetypeList" item="vo"}
+                <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Purpose')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-purpose" data-rule="required" class="form-control selectpicker" name="row[purpose]">
+                {foreach name="purposeList" item="vo"}
+                <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Currency')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select  id="c-currency" data-rule="required" class="form-control selectpicker" name="row[currency]">
+                {foreach name="currencyList" item="vo"}
+                <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Period_date')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-period_startdate" data-rule="required" style="width: 40%" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="row[period_startdate]" type="text" value="">&nbsp;至&nbsp;<input data-rule="required" id="c-period_enddate" style="width: 40%" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="row[period_enddate]" type="text" value="">
+        </div>
+    </div>
+    <!--<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Verifyswitch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <input  id="c-verifyswitch" name="row[verifyswitch]" type="hidden" value="0">
+            <a href="javascript:;" data-toggle="switcher" class="btn-switcher" data-input-id="c-verifyswitch" data-yes="1" data-no="0" >
+                <i class="fa fa-toggle-on text-success fa-flip-horizontal text-gray fa-2x"></i>
+            </a>
+        </div>
+    </div>
+    <div class="form-group hidden">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Financialswitch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <input  id="c-financialswitch" name="row[financialswitch]" type="hidden" value="0">
+            <a href="javascript:;" data-toggle="switcher" class="btn-switcher" data-input-id="c-financialswitch" data-yes="1" data-no="0" >
+                <i class="fa fa-toggle-on text-success fa-flip-horizontal text-gray fa-2x"></i>
+            </a>
+        </div>
+    </div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="statusList" item="vo"}
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="normal"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <!--<div class="form-group hidden">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Approveswitch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <input  id="c-approveswitch" name="row[approveswitch]" type="hidden" value="0">
+            <a href="javascript:;" data-toggle="switcher" class="btn-switcher" data-input-id="c-approveswitch" data-yes="1" data-no="0" >
+                <i class="fa fa-toggle-on text-success fa-flip-horizontal text-gray fa-2x"></i>
+            </a>
+        </div>
+    </div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('State')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="stateList" item="vo"}
+            <label for="row[state]-{$key}"><input id="row[state]-{$key}" name="row[state]" type="radio" value="{$key}" {in name="key" value="0"}checked{/in} /> {$vo}</label>
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Notecontent')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-notecontent" class="form-control editor" rows="5" name="row[notecontent]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Uploadurl')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-uploadurl" data-rule="required" class="form-control" size="50" name="row[uploadurl]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-uploadurl" class="btn btn-danger plupload" data-input-id="c-uploadurl" data-mimetype="jpg,png,bmp,jpeg,gif,zip,rar,xls,xlsx,doc,docx" data-multiple="false" data-preview-id="p-uploadurl"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-uploadurl"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-uploadurl"></ul>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
